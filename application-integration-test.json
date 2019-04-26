@@ -1,26 +1,52 @@
 {
 	"info": {
-		"_postman_id": "7506eef2-bb0c-42b7-b572-8f2971ff2fd7",
-		"name": "retoCollection",
+		"_postman_id": "ea4e8e10-1eed-41ba-8068-9ab54059290f",
+		"name": "reto-intercorp",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
-	"item": [],
-	"event": [
+	"item": [
 		{
-			"listen": "test",
-			"script": {
-				"id": "49cf9993-36d8-4fe8-a6b7-095631e66ca5",
-				"type": "text/javascript",
-				"exec": [
-					"pm.test(\"Status code is 200\", function () {",
-					"    pm.response.to.have.status(200);",
-					"});",
-					"// esta es la pantalla es la ultima pestaña",
-					"pm.test(\"Body matches string\", function () {",
-					"    pm.expect(pm.response.text()).to.include(\"Greetings from Spring Boot!\");",
-					"});"
-				]
-			}
+			"name": "http://23.101.153.216:8080/",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "dd83c7aa-8d1b-49a7-8e25-36c437bf5d7e",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Content-Type is present\", function () {",
+							"    pm.response.to.have.header(\"Content-Type\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://23.101.153.216:8080/",
+					"protocol": "http",
+					"host": [
+						"23",
+						"101",
+						"153",
+						"216"
+					],
+					"port": "8080",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
 		}
 	]
 }
