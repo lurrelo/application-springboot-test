@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+    stage('Build local image') {
+        steps {
+            sh 'docker build -t dockerluisurrelo/application-springboot-test:latest .'
+            sh 'docker tag dockerluisurrelo/application-springboot-test:latest dockerluisurrelo/application-springboot:integrationtest'
+        }
+    }
+
+    stage('Publish image') {
+        steps {
+            withDockerRegistry([ credentialsId: "dockerhub", url: "" ]) {
+                sh "docker push dockerluisurrelo/application-springboot-test:latest"
+            }
+        }
+    }    
+    }
+}
