@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Integration Test') {
             steps {
-                sh 'newman run application-test.json'
+                sh 'newman run application-integration-test.json'
             }
         }
     }
