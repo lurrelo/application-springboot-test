@@ -6,12 +6,12 @@
 	},
 	"item": [
 		{
-			"name": "http://23.101.153.216:8080/",
+			"name": "http://52.167.49.64:8080/",
 			"event": [
 				{
 					"listen": "test",
 					"script": {
-						"id": "dd83c7aa-8d1b-49a7-8e25-36c437bf5d7e",
+						"id": "93397a7f-5321-40a6-b46e-328bf150c3df",
 						"exec": [
 							"pm.test(\"Status code is 200\", function () {",
 							"    pm.response.to.have.status(200);",
@@ -32,13 +32,13 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://23.101.153.216:8080/",
+					"raw": "http://52.167.49.64:8080/",
 					"protocol": "http",
 					"host": [
-						"23",
-						"101",
-						"153",
-						"216"
+						"52",
+						"167",
+						"49",
+						"64"
 					],
 					"port": "8080",
 					"path": [
